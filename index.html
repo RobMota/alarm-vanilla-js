@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+		<meta charset="UTF-8" />
+		<link defer rel="stylesheet" href="style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script defer type="text/javascript" src="./index.js"></script>
+    <title>Alarme</title>
+  </head>
+  <body>
+
+		
+		
+		<div class="alarme">
+			<audio id="musica">
+				<source src="./alarm.mp3" type="audio/ogg">
+				<source src="./alarm.mp3" type="audio/mpeg">
+			</audio>
+			<h2>Minutos</h2>
+			
+      <select class="min">
+			</select>
+			
+			<h2>Segundos</h2>
+			
+			<select class="seg"></select>
+			
+			<button class="btn" onclick="iniciarCont()">Começar</button>
+			
+			<div class="tempo">0</div>
+    </div>
+  </body>
+</html>
