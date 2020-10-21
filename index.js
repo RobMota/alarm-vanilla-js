@@ -3,6 +3,7 @@ let seg = document.querySelector(".seg");
 let tempo = document.querySelector(".tempo");
 let musica = document.getElementById("musica");
 let btn = document.querySelector(".btn");
+
 tempo.innerHTML = ` 00 : 00`;
 
 function ate60(seletor) {
@@ -20,10 +21,8 @@ let contagemAtivada = false;
 let t;
 
 function iniciarCont() {
-  let segundos = +parseInt(seg.value);
-  let minutos = +parseInt(min.value);
-  console.log("MINUTOS: " + minutos);
-  console.log("SEUNDOS: " + segundos);
+  let segundos = parseInt(seg.value);
+  let minutos = parseInt(min.value);
 
   // contagemAtivada esta parada
   //entao inicia
@@ -33,6 +32,9 @@ function iniciarCont() {
     //escrito parar
     btn.innerHTML = "Parar";
 
+    min.disabled = true;
+    seg.disabled = true;
+
     t = setInterval(function () {
       let minStr = minutos <= 9 ? "0" + minutos : minutos;
       let segStr = segundos <= 9 ? "0" + segundos : segundos;
@@ -41,15 +43,15 @@ function iniciarCont() {
       tempo.innerHTML = `${minStr} : ${segStr}`; //mostra no innerHTML o tempo
 
       if (minutos != 0 && segundos == 0) {
-        console.log("Entrou na condicao 1");
         segundos = 60;
         minutos -= 1;
       }
 
       if (minutos == 0 && segundos == 0) {
-        console.log("Tocando Alarme");
+        console.log("Tocando som do alarme");
         clearInterval(t);
-        btn.innerHTML = "Alarme";
+        btn.style.backgroundColor = "orange";
+        btn.innerHTML = "Parar Alarme";
         musica.play();
       }
 
@@ -58,9 +60,13 @@ function iniciarCont() {
   } else if (contagemAtivada == true) {
     //para a contagem
     //para o setInterval com clearInterval (parar variavel t)
-    console.log("Parando a contagem");
+    console.log("Parando som do alarme");
+    min.disabled = false;
+    seg.disabled = false;
+
     contagemAtivada = false;
     btn.innerHTML = "Começar";
+    btn.style.backgroundColor = "#f0f0f0";
     musica.pause();
     tempo.innerHTML = ` 00 : 00`;
     clearInterval(t);
