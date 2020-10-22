@@ -3,7 +3,7 @@
   <head>
 		<meta charset="UTF-8" />
 		<link defer rel="stylesheet" href="style.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<script defer type="text/javascript" src="./index.js"></script>
     <title>Alarme</title>
   </head>
@@ -14,18 +14,32 @@
 				<source src="./alarm.mp3" type="audio/ogg">
 				<source src="./alarm.mp3" type="audio/mpeg">
 			</audio>
-			<h2>Minutos</h2>
 			
-      <select class="min">
-			</select>
-			
-			<h2>Segundos</h2>
-			
-			<select class="seg"></select>
-			
-			<button class="btn" onclick="iniciarCont()">Começar</button>
-			
+			<div class="timer-container">
+				<div class="horas">
+					<h2>Horas</h2>
+					<p class="hora"></p>
+				</div>
+
+				<div class="minutos">
+					<h2>Minutos</h2>
+					<p class="min"></p>
+				</div>
+				
+				<div class="segundos">
+					<h2>Segundos</h2>
+					<p class="seg"></p>
+				</div>
+			</div>
+
+			<button class="btn" onclick="iniciarTimer()">Começar</button>
 			<div class="tempo">0</div>
+
+			<div class="timer-circulo" >
+				<canvas id="circulo-container" width="300" height="300">
+					Your browser does not support the HTML5 canvas tag
+				</canvas>
+			</div>
     </div>
   </body>
 </html>

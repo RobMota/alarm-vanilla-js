@@ -1,6 +1,8 @@
 *{
-	font-size: 20px;
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	background-color: black;
+	box-sizing: border-box;
+	font-size: 16px;
 }
 
 .alarme{
@@ -12,12 +14,54 @@
 }
 
 .btn{
+	border-radius: 100px;
 	margin-top: 30px;
 	padding: 10px 20px;
 	border: 1px solid black;
 	cursor: pointer;
+	color: white;
+	background-color: rgb(73, 87, 214);
 }
 
 .tempo{
 	margin-top: 30px;
 }
+
+.horas h2,
+.minutos h2,
+.segundos h2{
+	color: rgb(112, 110, 110);
+	font-weight: 100;
+	font-size: 1rem;
+}
+
+.timer-container div.horas,
+.timer-container div.minutos,
+.timer-container div.segundos{
+	display: flex;
+	flex-direction: column;
+}
+
+.timer-container div.horas p,
+.timer-container div.minutos p,
+.timer-container div.segundos p{
+	color: white;
+	font-size: 4rem;
+}
+
+
+.timer-container{
+	display: flex;
+}
+
+.horas,
+.minutos,
+.segundos{
+	text-align: center;
+	margin: 20px;
+}
+
+#circulo-container{
+	/* border: 6px solid purple; */
+	/* border-radius: 50%; */
+} 
